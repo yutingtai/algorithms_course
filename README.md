@@ -1,5 +1,4 @@
 # Algorithms and datastructures
-***
 ### Datastructures
 * Binary Search Tree
 * Heap
