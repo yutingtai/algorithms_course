@@ -32,7 +32,7 @@ def binary_search_recursive(arr, number, first, last):
 
 
 if __name__ == '__main__':
-    arr = [5, 2, 1, 7, 3, 6, 11, 12, 15, 13]
+    arr = [5, 2, 1, 7, 3, 6, 11, 12, 15, 13 , 18]
     arr.sort()
     print(binary_search(arr, 13))
     print(binary_search_recursive(arr, 13, 0, len(arr) - 1))

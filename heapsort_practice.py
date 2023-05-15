@@ -86,7 +86,7 @@ def heapify(arr, i):
 
 
 def make_heap(arr):
-    for i in range(parent(len(arr) - 1), -1, -1):
+    for i in reversed(range(parent(len(arr) - 1))):
         heapify(arr, i)
     return arr
 
