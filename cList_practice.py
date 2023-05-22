@@ -11,7 +11,7 @@ class CList:
         if self.size == self.capacity:
             old_array = self.array
             self.capacity *= 2
-            self.array = (2 * self.capacity * ctypes.c_int)()
+            self.array = (self.capacity * ctypes.c_int)()
             for i in range(self.size):
                 self.array[i] = old_array[i]
             self.array[self.size] = el
@@ -25,7 +25,7 @@ class CList:
         self.size -= 1
         if self.size == self.capacity // 4:
             old_array = self.array
-            self.array = (2 * self.capacity * ctypes.c_int)()
+            self.array = (2 * self.size * ctypes.c_int)()
             for i in range(self.size):
                 self.array[i] = old_array[i]
             self.capacity = self.capacity // 2
@@ -39,6 +39,11 @@ class CList:
             self.array[index] = el
             self.size += 1
             for i in range(index + 1, self.size):
+                self.array[i] = old_array[i]
+        else:
+            old_array = self.array
+            self.array[index] = el
+            for i in range(index + 1, self.size + 1):
                 self.array[i] = old_array[i]
 
 
